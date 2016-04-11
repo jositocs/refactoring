@@ -25,6 +25,9 @@ public class TestCustomer {
 		customer2.addRental(rental2);
 		customer2.addRental(rental3);
 		
+		movie1.getFrequentRenterPoints(7);
+		assertEquals(movie1.getFrequentRenterPoints(7),1);
+		
 		assertEquals(customer1.htmlStatement(),"<H1>Rentals for <EM>Jose</EM></H1><P>"+"\n"+"Titanic: 3.0<BR>"+"\n"+"<P>You owe <EM>3.0</EM><P>"+"\n"+"On this rental rental you earned <EM>1</EM> frequent renter points<P>");
 		
 		
