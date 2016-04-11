@@ -1,20 +1,23 @@
 package refactoring;
 
+import java.util.Enumeration;
+
 public class Rental {
 
-	private Movie movie;
-	private int daysRented;
+private Movie movie;
+private int daysRented;
 
-	public Rental(Movie inmovie, int indaysRented) {
-		movie = inmovie;
-		daysRented = indaysRented;
-	}
+public Rental(Movie inmovie, int indaysRented) {
+	movie = inmovie;
+	daysRented = indaysRented;
+}
 
-	public int getDaysRented() {
-		return daysRented;
-	}
+public int getDaysRented() {
+	return daysRented;
+}
 
-	public Movie getMovie() {
-		return movie;
-	}
+public Movie getMovie() {
+	return movie;
+}
+
 }
