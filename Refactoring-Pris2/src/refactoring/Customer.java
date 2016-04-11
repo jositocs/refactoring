@@ -1,5 +1,6 @@
 package refactoring;
 
+
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Iterator;
@@ -67,6 +68,22 @@ public class Customer {
 
 	private double amountFor(Rental aRental) {
 		return aRental.getCharge();
+	}
+
+	public String htmlStatement() {
+		Enumeration rentals = _rentals.elements();
+		String result = "<H1>Rentals for <EM>" + getName() + "</EM></H1><P>\n";
+		while (rentals.hasMoreElements()) {
+			Rental each = (Rental) rentals.nextElement();
+			// show figures for each rental
+			result += each.getMovie().getTitle() + ": " + String.valueOf(each.getCharge()) + "<BR>\n";
+		}
+		// add footer lines
+		result += "<P>You owe <EM>" + String.valueOf(getTotalCharge()) + "</EM><P>\n";
+		result += "On this rental rental you earned <EM>" + String.valueOf(getTotalFrequentRenterPoints())
+				+ "</EM> frequent renter points<P>";
+
+		return result;
 	}
 
 }
